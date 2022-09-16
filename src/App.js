@@ -3,6 +3,9 @@ import TodoList from "./components/TodoList";
 import { ThemeProvider } from "./context/ThemeContext";
 import { TodoServicesProvider } from "./context/TodoServicesContext";
 import { AuthProvider } from "./context/AuthContext";
+import AddTodo from "./components/AddTodo";
+import UserLogin from "./components/UserLogin";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
@@ -10,7 +13,9 @@ function App() {
       <TodoServicesProvider>
         <AuthProvider>
           <ThemeProvider>
-            <TodoList />
+            <Navbar />
+            <UserLogin />
+            <AddTodo />
           </ThemeProvider>
         </AuthProvider>
       </TodoServicesProvider>

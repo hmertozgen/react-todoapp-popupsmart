@@ -6,8 +6,11 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(
     JSON.parse(localStorage.getItem("theme")) || false
   );
+  const changeTheme = () => {
+    setTheme(!theme);
+  };
 
-  const values = { theme, setTheme };
+  const values = { theme, setTheme, changeTheme };
   return (
     <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
   );

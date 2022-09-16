@@ -62,4 +62,4 @@ export const TodoServicesProvider = ({ children }) => {
   );
 };
 
-export const useTheme = () => useContext(TodoServicesContext);
+export const useTodoServices = () => useContext(TodoServicesContext);
