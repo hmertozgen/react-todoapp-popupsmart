@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useTodoServices } from "../context/TodoServicesContext";
 import { BsCheck, BsCheck2All } from "react-icons/bs";
 import { MdEdit, MdDelete } from "react-icons/md";
@@ -8,12 +8,6 @@ const TodoList = ({ setContentt, setEdit }) => {
     useTodoServices();
   useEffect(() => {
     getTodos();
-    // if (theme) {
-    //   document.body.style.backgroundColor = "rgb(240, 231, 219)";
-    // } else {
-    //   document.body.style.backgroundColor = "rgb(0 0 0 / 0.9)";
-    // }
-    // localStorage.setItem("theme", JSON.stringify(theme));
   }, []);
 
   function handleDelete(id) {
@@ -37,31 +31,35 @@ const TodoList = ({ setContentt, setEdit }) => {
           key={item.id}
           className={`bg-gray-200 border-2 my-2 py-2 dark:bg-gray-900 dark:text-white dark:border-none`}
         >
-          <div className="d-flex items-center justify-between">
+          <div className="d-flex ">
             <button
-              className="cursor-pointer hover:scale-110 mx-2"
+              className="btn btn-primary  mx-2"
               onClick={() => handleCheck(item)}
             >
               {item.isCompleted ? (
                 <BsCheck size={24} />
               ) : (
-                <BsCheck2All size={24} className="text-red-400" />
+                <BsCheck2All size={24} className="text-danger" />
               )}
             </button>
             <label
-              className={item.isCompleted ? "" : `line-through text-red-400`}
+              className={
+                item.isCompleted
+                  ? ""
+                  : `text-decoration-line-through text-danger`
+              }
             >
               {item.content}
             </label>
             <div className="flex">
               <button
-                className="mx-2 hover:scale-110"
+                className="btn btn-success mx-2 "
                 onClick={() => handleEdit(item)}
               >
                 <MdEdit size={24} />
               </button>
               <button
-                className="mx-2 hover:scale-110"
+                className="btn btn-danger mx-2 "
                 onClick={() => handleDelete(item.id)}
               >
                 <MdDelete size={24} />

@@ -1,5 +1,5 @@
 import "./App.css";
-import TodoList from "./components/TodoList";
+
 import { ThemeProvider } from "./context/ThemeContext";
 import { TodoServicesProvider } from "./context/TodoServicesContext";
 import { AuthProvider } from "./context/AuthContext";
@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className={"App"}>
       <TodoServicesProvider>
         <AuthProvider>
           <ThemeProvider>

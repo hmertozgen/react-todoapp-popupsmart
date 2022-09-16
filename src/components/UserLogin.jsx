@@ -6,25 +6,29 @@ const UserLogin = () => {
 
   return (
     <div className="container h-screen mx-auto flex justify-center items-center ">
-      <div className="bg-blue-400 w-96 h-72 rounded-md shadow-md flex gap-y-4 flex-col items-center justify-center">
-        <label className="font-bold text-gray-100 text-sm " htmlFor="name">
-          Lütfen isminizi giriniz!
-        </label>
-        <input
-          className="px-4 py-2 w-60 outline-none rounded-lg"
-          type="text"
-          id="name"
-          placeholder="Lütfen bir isim giriniz..."
-          value={userName}
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <button
-          onClick={handleClick}
-          className="px-5 py-2 bg-blue-900/90 rounded-md shadow-md text-blue-200"
-        >
-          Devam Et!
-        </button>
-      </div>
+      {localStorage.getItem("user") ? (
+        ""
+      ) : (
+        <div className="bg-blue-400 w-96 h-72 rounded-md shadow-md flex gap-y-4 flex-col items-center justify-center">
+          <label className="font-bold text-gray-100 text-sm " htmlFor="name">
+            Kullanıcı adı giriniz
+          </label>
+          <input
+            className="px-4 py-2 w-50 "
+            type="text"
+            id="name"
+            placeholder="Lütfen bir isim giriniz..."
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <button
+            onClick={handleClick}
+            className="btn btn-primary px-5 py-2  rounded-md shadow-md text-blue-200"
+          >
+            Devam Et!
+          </button>
+        </div>
+      )}
     </div>
   );
 };
