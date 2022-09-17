@@ -29,7 +29,7 @@ const AddTodo = () => {
     setContentt("");
   };
   return (
-    <section className="text-success">
+    <section className="text-success justify-content-center">
       <div className="max-width mx-auto  py-4">
         <form onSubmit={handleSubmit} className="text-center">
           <input
@@ -38,7 +38,11 @@ const AddTodo = () => {
             onChange={(e) => setContentt(e.target.value)}
             className=" py-4 px-2  mb-4 "
           />
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit"
+            className={"btn btn-success ms-2 py-4"}
+          />
         </form>
         {loading && <Loading />}
         {!loading && todos.length === 0 && (

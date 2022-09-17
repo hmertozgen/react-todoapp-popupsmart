@@ -9,9 +9,9 @@ const UserLogin = () => {
       {localStorage.getItem("user") ? (
         ""
       ) : (
-        <div className="bg-blue-400 w-96 h-72 rounded-md shadow-md flex gap-y-4 flex-col items-center justify-center">
-          <label className="font-bold text-gray-100 text-sm " htmlFor="name">
-            Kullanıcı adı giriniz
+        <div className=" d-flex    justify-content-center">
+          <label className=" " htmlFor="name">
+            Kullanıcı adı giriniz!
           </label>
           <input
             className="px-4 py-2 w-50 "
@@ -21,11 +21,8 @@ const UserLogin = () => {
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
-          <button
-            onClick={handleClick}
-            className="btn btn-primary px-5 py-2  rounded-md shadow-md text-blue-200"
-          >
-            Devam Et!
+          <button onClick={handleClick} className="btn btn-primary px-5 py-2  ">
+            Login
           </button>
         </div>
       )}

@@ -9,8 +9,8 @@ const Navbar = () => {
   const { theme, changeTheme } = useTheme();
   const { getTodos } = useTodoServices();
   useEffect(() => {
-    getTodos();
     if (theme) {
+      getTodos();
       document.body.style.backgroundColor = "rgb(240, 231, 219)";
     } else {
       document.body.style.backgroundColor = "rgb(0 0 0 / 0.7)";
@@ -32,10 +32,7 @@ const Navbar = () => {
       )}
       <div className="flex items-center gap-x-4">
         {localStorage.getItem("user") ? (
-          <button
-            onClick={removeUser}
-            className="px-4 py-2 bg-blue-900/90 hover:bg-blue-200 hover:text-blue-900 transition-all text-blue-400 rounded-md shadow-md"
-          >
+          <button onClick={removeUser} className="btn btn-info px-4 py-2 ">
             Çıkış yap!
           </button>
         ) : null}

@@ -27,13 +27,11 @@ const TodoList = ({ setContentt, setEdit }) => {
   return (
     <ul>
       {todos.map((item) => (
-        <li
-          key={item.id}
-          className={`bg-gray-200 border-2 my-2 py-2 dark:bg-gray-900 dark:text-white dark:border-none`}
-        >
-          <div className="d-flex ">
+        <li key={item.id} className={`py-2  justify-content-center row`}>
+          <div className="d-flex row">
+            <div className="col-3"></div>
             <button
-              className="btn btn-primary  mx-2"
+              className="btn btn-primary  mx-2 col-2"
               onClick={() => handleCheck(item)}
             >
               {item.isCompleted ? (
@@ -45,15 +43,15 @@ const TodoList = ({ setContentt, setEdit }) => {
             <label
               className={
                 item.isCompleted
-                  ? ""
-                  : `text-decoration-line-through text-danger`
+                  ? "col-2 "
+                  : `text-decoration-line-through text-danger col-2`
               }
             >
               {item.content}
             </label>
-            <div className="flex">
+            <div className="d-flex col-2">
               <button
-                className="btn btn-success mx-2 "
+                className="btn btn-success mx-2"
                 onClick={() => handleEdit(item)}
               >
                 <MdEdit size={24} />
